@@ -1,0 +1,39 @@
+.challenges-container {
+  background-color: white;
+
+  margin: 0 auto;
+  width: 1320px;
+  padding: 0 20px;
+}
+
+.challenges-header {
+  background-color: #80c465;
+  color: white;
+  padding: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 25px 0;
+  margin-top: 0;
+}
+
+.descriptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px 0;
+  .desc-item {
+    text-align: left;
+    width: 95%;
+    h2 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      color: #8b8b8b;
+      padding: 0 10px;
+    }
+  }
+}

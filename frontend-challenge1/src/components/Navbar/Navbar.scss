@@ -2,17 +2,34 @@
   background-color: #fff;
   display: flex;
   height: 55px;
-  margin: 0 2.5rem;
+  padding: 0 2.5rem;
 }
 
 .nav-items {
   display: flex;
   margin-left: auto;
+  button {
+    padding: 10px;
+    height: 54px;
+  }
+}
+
+.nav-btn {
+  margin-right: 5px;
 }
 
 .nav-icon {
+  width: 23px;
+  height: 22px;
+}
+
+.input-container {
+  margin: auto auto;
+}
+
+.nav-profile-icon {
   display: flex;
-  width: 4rem;
+  width: 2rem;
 }
 
 .nav-bars {
