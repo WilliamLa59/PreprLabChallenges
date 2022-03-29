@@ -1,0 +1,40 @@
+.navbar-container {
+  background-color: #fff;
+  display: flex;
+  height: 55px;
+  margin: 0 2.5rem;
+}
+
+.nav-items {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-icon {
+  display: flex;
+  width: 4rem;
+}
+
+.nav-bars {
+  height: 35%;
+  padding: 16px;
+}
+
+.side-nav {
+  width: 220px;
+  height: 100vh;
+  position: absolute;
+  padding: 1rem;
+  top: 54px;
+  transition: 0.5s ease-in-out;
+
+  .side-nav-profile {
+    width: 8rem;
+    margin: 0 auto;
+  }
+
+  ul {
+    list-style-type: none;
+    text-align: left;
+  }
+}
