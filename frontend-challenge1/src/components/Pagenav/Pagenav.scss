@@ -1,0 +1,18 @@
+.pagenav-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 20px;
+  .content-container {
+    color: #727d92;
+    text-align: left;
+    margin: auto 0;
+  }
+  .nav-container {
+    text-align: right;
+  }
+  .pagenav-btn {
+    border: 1px solid #dbdfe2;
+    color: #8b8b8b;
+    background: white;
+  }
+}
