@@ -5,6 +5,7 @@ import { Challenges } from './components/Challenges/Challenges';
 import { Labs } from './components/Labs/Labs';
 import { Navbar } from './components/Navbar/Navbar';
 import { Projects } from './components/Projects/Projects';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   return (
@@ -18,9 +19,9 @@ function App() {
           <Route path="/labs" element={<Labs/>}/> 
           <Route path="/projects" element={<Projects/>}/> 
         </Routes>
-        
+
       </BrowserRouter>
-    
+      <Footer/>
     </div>
   );
 }

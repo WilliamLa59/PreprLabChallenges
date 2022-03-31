@@ -2,8 +2,10 @@
   background-color: white;
   box-shadow: 0px 5px 10px 1px #e4e4e4;
   margin: 0 auto;
+  margin-bottom: 50px;
   width: 1320px;
   padding: 0 20px;
+  height: 100%;
 }
 
 .challenges-header {
@@ -35,5 +37,16 @@
       color: #8b8b8b;
       padding: 0 10px;
     }
+    a {
+      color: #007bff;
+    }
+    a:hover {
+      color: #27ae60;
+      opacity: 0.9;
+    }
   }
+}
+
+.card-list {
+  padding: 20px 0 1px 0;
 }

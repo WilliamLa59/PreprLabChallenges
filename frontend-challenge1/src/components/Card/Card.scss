@@ -1,18 +1,18 @@
-.challenge-card {
+.card {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
 
-.challenge-img {
+.card-img {
   width: 32rem;
   height: 18rem;
 }
 
-.challenge-content {
+.card-content {
   text-align: left;
   padding-left: 30px;
   position: relative;
-  .challenge-name {
+  .card-name {
     font-size: 25px;
     font-weight: 400;
   }
@@ -22,7 +22,7 @@
     font-weight: 500;
     margin-bottom: 25px;
   }
-  .challenge-desc {
+  .card-desc {
     color: #727d92;
     font-size: 1rem;
     font-weight: 400;
