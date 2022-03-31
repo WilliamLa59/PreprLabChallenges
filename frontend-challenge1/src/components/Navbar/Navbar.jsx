@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 import {
     useDisclosure,
     MenuItem,
@@ -16,14 +16,23 @@ import { SearchIcon } from '@chakra-ui/icons'
 import logo from '../../assets/logo.png'
 import explore from '../../assets/explore.png'
 import dashboard from '../../assets/web-browser.png'
-import user_bashboard from '../../assets/user.png'
+import user_dashboard from '../../assets/user.png'
 import settings from '../../assets/settings.png'
 import user from '../../assets/user.png'
-import search from '../../assets/search_icon.png'
 import user_profile from '../../assets/user_profile.png'
 
+import labs from '../../assets/labs.png'
+import challenges from '../../assets/challenges.png'
+import organizations from '../../assets/organizations.png'
+import projects from '../../assets/projects.png'
+import teammatching from '../../assets/teammatching.png'
+import achievements from '../../assets/achievements.png'
+import resources from '../../assets/resources.png'
+
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars,faUser, faQuestionCircle, faEnvelope, faNewspaper, faBell, faCog, faSignOut } from '@fortawesome/free-solid-svg-icons'
 
 import './Navbar.scss'
 
@@ -33,9 +42,25 @@ export const Navbar = () => {
     
     const { isOpen: dashboardIsOpen, onOpen: dashboardOnOpen, onClose: dashboardOnClose } = useDisclosure()
     const { isOpen: manageIsOpen, onOpen: manageOnOpen, onClose: manageOnClose } = useDisclosure()
+    
+    const prevScrollY = useRef(0);
+
+    useEffect(() => {                                           //Scroll Event Listener taken from here: 
+        const handleScroll = () => {                            //https://javascript.plainenglish.io/how-to-update-a-state-in-a-react-component-in-a-scroll-event-listener-b04ecc7e26e6
+            const currentScrollY = window.scrollY;
+            if (prevScrollY.current < currentScrollY) {
+                setIsShowing(false);
+            }
+            if (prevScrollY.current > currentScrollY) {
+                setIsShowing(false);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isShowing]);
 
   return (
-    <div className='navbar-container'>
+    <div className='navbar-container' >
 
         <img src={logo} alt="" />
 
@@ -43,43 +68,59 @@ export const Navbar = () => {
         
         <div className="side-nav" style={isShowing ? {left: "0px"} : {left: "-50vw"}}>
             <img className='side-nav-profile'src={user_profile} alt="" />
-            <a href="">William La</a>
-            <h3>Browse</h3>
-            <ul>
-                <li>
-                    Explore
-                </li>
-                <li>
-                    Labs
-                </li>
-                <li>
-                    Challenges
-                </li>
-                <li>
-                    Organizations
-                </li>
-            </ul>
-            <h3>My Activity</h3>
-            <ul>
-                <li>
-                    Projects
-                </li>
-                <li>
-                    Team Matching
-                </li>
-                <li>
-                    Achievements
-                </li>
-                <li>
-                    Resources
-                </li>
-                <li>
-                    Help Center
-                </li>
-                <li>
-                    v8.0.1
-                </li>
-            </ul>
+            <a className='profile-link' href="">William La</a>
+            <div className='side-nav-btns'>
+                <h3 className='side-nav-divider'>Browse</h3>
+                <ul>
+                    <li className='side-nav-item'>
+                        <img className='side-nav-icon' src={explore} alt="" />
+                        Explore
+                    </li>
+                    <li>
+                        <a className='side-nav-item' href="/labs">
+                            <img className='side-nav-icon' src={labs} alt="" />
+                            Labs
+                        </a>
+                    </li>
+                    <li >
+                        <a className='side-nav-item' href="/">
+                            <img className='side-nav-icon' src={challenges} alt="" />
+                            Challenges
+                        </a>
+                    </li>
+                    <li className='side-nav-item'>
+                        <img className='side-nav-icon' src={organizations} alt="" />
+                        Organizations
+                    </li>
+                </ul>
+                <h3 className='side-nav-divider'>My Activity</h3>
+                <ul>
+                    <li>
+                        <a className='side-nav-item' href="/projects">
+                            <img className='side-nav-icon' src={projects} alt="" />
+                            Projects
+                        </a>
+                    </li>
+                    <li className='side-nav-item'>
+                        <img className='side-nav-icon' src={teammatching} alt="" />
+                        Team Matching
+                    </li>
+                    <li className='side-nav-item'>
+                        <img className='side-nav-icon' src={achievements} alt="" />
+                        Achievements
+                    </li>
+                    <li className='side-nav-item'>
+                        <img className='side-nav-icon' src={resources} alt="" />
+                        Resources
+                    </li>
+                    <li className='side-nav-item no-icon'>
+                        Help Center
+                    </li>
+                    <li className='side-nav-item no-icon'>
+                        v8.0.1
+                    </li>
+                </ul>
+            </div>
         </div>   
       
 
@@ -91,14 +132,14 @@ export const Navbar = () => {
             <Menu isOpen={dashboardIsOpen}>
                 <MenuButton className="nav-btn" onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose} as={Button} width='145x' variant='ghost' leftIcon={<img className='nav-icon' src={dashboard} alt=''/>}> My Dashboard</MenuButton>
                 <MenuList onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose}>
-                    <MenuItem>User Dashboard</MenuItem>
+                    <MenuItem icon={<img className='nav-icon' src={user_dashboard} alt=''/>}>User Dashboard</MenuItem>
                 </MenuList>
             </Menu>
 
             <Menu className="nav-btn" isOpen={manageIsOpen}>
                 <MenuButton className="nav-btn" onMouseEnter={manageOnOpen} onMouseLeave={manageOnClose} as={Button} width='110px' variant='ghost' leftIcon={<img className='nav-icon' src={settings} alt=''/>}>Manage</MenuButton>
                 <MenuList onMouseEnter={manageOnOpen} onMouseLeave={manageOnClose}>
-                    <MenuItem>Profile</MenuItem>
+                    <MenuItem icon={<img className='nav-icon' src={user} alt=''/>}>Profile</MenuItem>
                 </MenuList>
             </Menu>
 
@@ -114,13 +155,14 @@ export const Navbar = () => {
                         <img className='nav-profile-icon' src={user_profile} alt="" />
                     </MenuButton>
                     <MenuList>
-                        <MenuItem>William La</MenuItem>
-                        <MenuItem>Help</MenuItem>
-                        <MenuItem>Inbox</MenuItem>
-                        <MenuItem>Newsfeed</MenuItem>
-                        <MenuItem>Notifications 0</MenuItem>
-                        <MenuItem>Settings</MenuItem>
-                        <MenuItem>Log Out</MenuItem>
+                        <MenuItem><img className='dropdown-profile-icon' src={user_profile} alt=''></img>William La</MenuItem>
+                        <MenuItem icon={<FontAwesomeIcon icon={faUser} color="#8b8b8b"/>}>My Info</MenuItem>
+                        <MenuItem icon={<FontAwesomeIcon icon={faQuestionCircle} color="#8b8b8b"/>}>Help</MenuItem>
+                        <MenuItem icon={<FontAwesomeIcon icon={faEnvelope} color="#8b8b8b"/>}>Inbox</MenuItem>
+                        <MenuItem icon={<FontAwesomeIcon icon={faNewspaper} color="#8b8b8b"/>}>Newsfeed</MenuItem>
+                        <MenuItem icon={<FontAwesomeIcon icon={faBell} color="#8b8b8b"/>}>Notifications 0</MenuItem>
+                        <MenuItem icon={<FontAwesomeIcon icon={faCog} color="#8b8b8b"/>}>Settings</MenuItem>
+                        <MenuItem icon={<FontAwesomeIcon icon={faSignOut} color="#8b8b8b"/>}>Log Out</MenuItem>
                     </MenuList>
                     </React.Fragment>
                 )}
