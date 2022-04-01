@@ -159,7 +159,7 @@ export const Navbar = () => {
             <Menu>
                 {({ isOpen }) => (
                     <React.Fragment>
-                    <MenuButton isActive={isOpen} as={Button} variant='ghost'>
+                    <MenuButton className='dropdown-btn' isActive={isOpen} as={Button} variant='ghost'>
                         <img className='nav-profile-icon' src={user_profile} alt="" />
                     </MenuButton>
                     <MenuList>

@@ -23,7 +23,12 @@
 .nav-btn {
   margin-right: 5px;
 }
-
+.nav-btn:focus{
+  box-shadow: none !important;
+}
+.dropdown-btn:focus{
+  box-shadow: none !important;
+}
 .explore-btn{
   width: 100px;
 }
