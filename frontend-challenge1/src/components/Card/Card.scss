@@ -13,6 +13,7 @@
   padding-left: 30px;
   position: relative;
   .card-name {
+    color: var(--general-font-color);
     font-size: 25px;
     font-weight: 400;
   }
@@ -23,7 +24,7 @@
     margin-bottom: 25px;
   }
   .card-desc {
-    color: #727d92;
+    color: var(--card-desc);
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: auto;

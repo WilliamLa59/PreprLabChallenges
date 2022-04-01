@@ -1,5 +1,5 @@
 .App {
-  background-color: #f3f7fc;
+  background-color: var(--bg);
   text-align: center;
 }
 

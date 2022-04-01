@@ -14,9 +14,9 @@ export const Pagenav = () => {
             Explore
         </div>
         <div className='nav-container'>
-            <Button className="pagenav-btn" style={currentRoute === '/' ? {color: "#27ae60", backgroundColor: "#f5f5f5"} : {color: "##8b8b8b", backgroundColor: "#fff"}}><Link to='/'>Challenges</Link></Button>
-            <Button className="pagenav-btn" style={currentRoute === '/labs' ? {color: "#27ae60", backgroundColor: "#f5f5f5"} : {color: "##8b8b8b", backgroundColor: "#fff"}} ><Link to='/labs'>Labs</Link></Button>
-            <Button className="pagenav-btn" style={currentRoute === '/projects' ? {color: "#27ae60", backgroundColor: "#f5f5f5"} : {color: "##8b8b8b", backgroundColor: "#fff"}} ><Link to='/projects'>Projects</Link></Button>
+            <Button className="pagenav-btn" style={currentRoute === '/' ? {color: "#27ae60", backgroundColor: "var(--active-btn-color)"} : {color: "var(--general-font-color)", backgroundColor: "var(--btn-color)"}}><Link to='/'>Challenges</Link></Button>
+            <Button className="pagenav-btn" style={currentRoute === '/labs' ? {color: "#27ae60", backgroundColor: "var(--active-btn-color)"} : {color: "var(--general-font-color)", backgroundColor: "var(--btn-color)"}}><Link to='/labs'>Labs</Link></Button>
+            <Button className="pagenav-btn" style={currentRoute === '/projects' ? {color: "#27ae60", backgroundColor: "var(--active-btn-color)"} : {color: "var(--general-font-color)", backgroundColor: "var(--btn-color)"}}><Link to='/projects'>Projects</Link></Button>
         </div>
     </div>
   )

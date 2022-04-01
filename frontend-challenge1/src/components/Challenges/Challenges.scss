@@ -1,6 +1,6 @@
 .challenges-container {
-  background-color: white;
-  box-shadow: 0px 5px 10px 1px #e4e4e4;
+  background-color: var(--bg-panel);
+  box-shadow: 0px 5px 10px 1px (--boxshadow);
   margin: 0 auto;
   margin-bottom: 50px;
   width: 1320px;
@@ -30,11 +30,12 @@
       font-size: 22px;
       font-weight: 500;
       margin-bottom: 12px;
+      color: var(--nav-font-color);
     }
     p {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
-      color: #8b8b8b;
+      color: var(--general-font-color);
       padding: 0 10px;
     }
     a {

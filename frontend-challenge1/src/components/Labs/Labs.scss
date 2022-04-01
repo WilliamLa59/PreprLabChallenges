@@ -1,6 +1,6 @@
 .labs-container {
-  background-color: white;
-  box-shadow: 0px 5px 10px 1px #e4e4e4;
+  background-color: var(--bg-panel);
+  box-shadow: 0px 5px 10px 1px (--boxshadow);
   margin: 0 auto;
   margin-bottom: 50px;
   width: 1320px;

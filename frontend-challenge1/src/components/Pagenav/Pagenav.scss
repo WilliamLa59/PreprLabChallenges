@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   .content-container {
-    color: #727d92;
+    color: var(--pagenav-content);
     text-align: left;
     margin: auto 0;
   }
@@ -11,7 +11,7 @@
   }
   .pagenav-btn {
     border: 1px solid #dbdfe2;
-    color: #8b8b8b;
+    color: val(--general-font-color);
     background: white;
   }
 }

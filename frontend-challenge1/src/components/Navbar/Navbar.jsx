@@ -9,7 +9,11 @@ import {
     InputGroup,
     InputLeftElement,
     Input,
-    Icon,
+    Switch,
+    FormLabel,
+    FormControl,
+    color,
+    
 } from "@chakra-ui/react"
 import { SearchIcon } from '@chakra-ui/icons'
 
@@ -32,7 +36,7 @@ import resources from '../../assets/resources.png'
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars,faUser, faQuestionCircle, faEnvelope, faNewspaper, faBell, faCog, faSignOut } from '@fortawesome/free-solid-svg-icons'
+import { faBars,faUser, faQuestionCircle, faEnvelope, faNewspaper, faBell, faCog, faSignOut, faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
 
 import './Navbar.scss'
 
@@ -44,6 +48,8 @@ export const Navbar = () => {
     const { isOpen: manageIsOpen, onOpen: manageOnOpen, onClose: manageOnClose } = useDisclosure()
     
     const prevScrollY = useRef(0);
+
+    const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {                                           //Scroll Event Listener taken from here: 
         const handleScroll = () => {                            //https://javascript.plainenglish.io/how-to-update-a-state-in-a-react-component-in-a-scroll-event-listener-b04ecc7e26e6
@@ -59,6 +65,17 @@ export const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isShowing]);
 
+    useEffect(()=> {
+        
+        if(darkMode){
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        if(!darkMode){
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+        // console.log("dark mode:" +darkMode);
+    },[darkMode]);
+
   return (
     <div className='navbar-container' >
         
@@ -72,6 +89,12 @@ export const Navbar = () => {
         <div className="side-nav" style={isShowing ? {left: "0px"} : {left: "-75vw"}}>
             <img className='side-nav-profile'src={user_profile} alt="" />
             <a className='profile-link' href="">William La</a>
+
+            <div className="darkmode-switch">
+                <FormLabel htmlFor='darkmode' style={darkMode? {color: "var(--nav-font-color)"} : {}}>Dark Mode</FormLabel>
+                <Switch id="darkmode" colorScheme="gray" onChange={() => setDarkMode(!darkMode)}/>
+            </div>
+
             <div className='side-nav-btns'>
                 <h3 className='side-nav-divider'>Browse</h3>
                 <ul>
@@ -105,7 +128,7 @@ export const Navbar = () => {
                         </a>
                     </li>
                     <li className='side-nav-item'>
-                        <img className='side-nav-icon' src={teammatching} alt="" />
+                        <FontAwesomeIcon className='side-nav-icon'icon={faPeopleGroup}/>
                         Team Matching
                     </li>
                     <li className='side-nav-item'>
@@ -128,21 +151,21 @@ export const Navbar = () => {
       
 
         <div className="nav-items">
-            <Button className="nav-btn explore-btn" variant='ghost' leftIcon={<img src={explore} alt=''/>}>
+            <Button className="nav-btn explore-btn" variant='ghost' colorScheme={darkMode ? 'whiteAlpha' : 'gray'} leftIcon={<img src={explore} alt=''/>}>
                 <p className='nav-btn-text'>Explore</p>
             </Button>
 
             <Menu isOpen={dashboardIsOpen}>
-                <MenuButton className="nav-btn dashboard-btn" onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose} as={Button} variant='ghost' leftIcon={<img className='nav-icon' src={dashboard} alt=''/>}><p className='nav-btn-text'>My Dashboard</p></MenuButton>
-                <MenuList onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose}>
-                    <MenuItem icon={<img className='nav-icon' src={user_dashboard} alt=''/>}>User Dashboard</MenuItem>
+                <MenuButton className="nav-btn dashboard-btn" onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose} as={Button} variant='ghost' colorScheme={darkMode ? 'whiteAlpha' : 'gray'} leftIcon={<img className='nav-icon' src={dashboard} alt=''/>}><p className='nav-btn-text'>My Dashboard</p></MenuButton>
+                <MenuList onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose} bg={darkMode ? '#434343' : '#fff'}>
+                    <MenuItem icon={<img className='nav-icon' src={user_dashboard} alt=''/>} style={darkMode? {color: "var(--nav-font-color)"} : {}}>User Dashboard</MenuItem>
                 </MenuList>
             </Menu>
 
             <Menu isOpen={manageIsOpen}>
-                <MenuButton className="nav-btn manage-btn" onMouseEnter={manageOnOpen} onMouseLeave={manageOnClose} as={Button} variant='ghost' leftIcon={<img className='nav-icon' src={settings} alt=''/>}><p className='nav-btn-text'>Manage</p></MenuButton>
-                <MenuList onMouseEnter={manageOnOpen} onMouseLeave={manageOnClose}>
-                    <MenuItem icon={<img className='nav-icon' src={user} alt=''/>}>Profile</MenuItem>
+                <MenuButton className="nav-btn manage-btn" onMouseEnter={manageOnOpen} onMouseLeave={manageOnClose} as={Button} variant='ghost' colorScheme={darkMode ? 'whiteAlpha' : 'gray'} leftIcon={<img className='nav-icon' src={settings} alt=''/>}><p className='nav-btn-text'>Manage</p></MenuButton>
+                <MenuList onMouseEnter={manageOnOpen} onMouseLeave={manageOnClose} bg={darkMode ? '#434343' : '#fff'}>
+                    <MenuItem icon={<img className='nav-icon' src={user} alt=''/>} style={darkMode? {color: "var(--nav-font-color)"} : {}}>Profile</MenuItem>
                 </MenuList>
             </Menu>
 
@@ -159,18 +182,18 @@ export const Navbar = () => {
             <Menu>
                 {({ isOpen }) => (
                     <React.Fragment>
-                    <MenuButton className='dropdown-btn' isActive={isOpen} as={Button} variant='ghost'>
+                    <MenuButton className='dropdown-btn' isActive={isOpen} as={Button} variant='ghost' colorScheme={darkMode ? 'whiteAlpha' : 'gray'}>
                         <img className='nav-profile-icon' src={user_profile} alt="" />
                     </MenuButton>
-                    <MenuList>
-                        <MenuItem><img className='dropdown-profile-icon' src={user_profile} alt=''></img>William La</MenuItem>
-                        <MenuItem icon={<FontAwesomeIcon icon={faUser} color="#8b8b8b"/>}>My Info</MenuItem>
-                        <MenuItem icon={<FontAwesomeIcon icon={faQuestionCircle} color="#8b8b8b"/>}>Help</MenuItem>
-                        <MenuItem icon={<FontAwesomeIcon icon={faEnvelope} color="#8b8b8b"/>}>Inbox</MenuItem>
-                        <MenuItem icon={<FontAwesomeIcon icon={faNewspaper} color="#8b8b8b"/>}>Newsfeed</MenuItem>
-                        <MenuItem icon={<FontAwesomeIcon icon={faBell} color="#8b8b8b"/>}>Notifications 0</MenuItem>
-                        <MenuItem icon={<FontAwesomeIcon icon={faCog} color="#8b8b8b"/>}>Settings</MenuItem>
-                        <MenuItem icon={<FontAwesomeIcon icon={faSignOut} color="#8b8b8b"/>}>Log Out</MenuItem>
+                    <MenuList bg={darkMode ? '#434343' : '#fff'}>
+                        <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}}><img className='dropdown-profile-icon' src={user_profile} alt=''></img>William La</MenuItem>
+                        <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faUser} color="var(--general-font-color)"/>}>My Info</MenuItem>
+                        <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faQuestionCircle} color="var(--general-font-color)"/>}>Help</MenuItem>
+                        <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faEnvelope} color="var(--general-font-color)"/>}>Inbox</MenuItem>
+                        <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faNewspaper} color="var(--general-font-color)"/>} >Newsfeed</MenuItem>
+                        <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faBell} color="var(--general-font-color)"/>}>Notifications 0</MenuItem>
+                        <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faCog} color="var(--general-font-color)"/>}>Settings</MenuItem>
+                        <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faSignOut} color="var(--general-font-color)"/>}>Log Out</MenuItem>
                     </MenuList>
                     </React.Fragment>
                 )}
