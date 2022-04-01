@@ -17,3 +17,27 @@
   margin: 25px 0;
   margin-top: 0;
 }
+
+@media (max-width: 1340px) {
+  .labs-container{
+    width:890px;
+  }
+}
+
+@media (max-width: 910px) {
+  .labs-container{
+    width: 600px;
+  }
+}
+
+@media (max-width: 620px) {
+  .labs-container{
+    width: 413px;
+  }
+}
+
+@media (max-width: 433px) {
+  .labs-container{
+    width: 320px;
+  }
+}

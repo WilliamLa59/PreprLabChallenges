@@ -50,3 +50,35 @@
 .card-list {
   padding: 20px 0 1px 0;
 }
+
+@media (max-width: 1340px) {
+  .challenges-container{
+    width:890px;
+  }
+}
+
+@media (max-width: 910px) {
+  .challenges-container{
+    width: 600px;
+  }
+}
+
+@media (max-width: 620px) {
+  .challenges-container{
+    width: 413px;
+  }
+  .descriptions{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    .desc-item{
+      margin: 0.5rem 0;
+    }
+  }
+
+}
+
+@media (max-width: 433px) {
+  .challenges-container{
+    width: 320px;
+  }
+}

@@ -15,3 +15,23 @@
     background: white;
   }
 }
+
+@media (max-width: 620px) {
+  .pagenav-container{
+    display: flex;
+    .nav-container{
+      margin-left: auto;
+    }
+  }
+}
+
+@media (max-width: 433px) {
+  .pagenav-container{
+    display: block;
+    .nav-container {
+      position: relative;
+      right: 10px;
+    }
+  }
+
+}

@@ -39,3 +39,27 @@
     font-weight: bold;
   }
 }
+
+@media (max-width: 1340px) {
+  .footer-grid{
+    width:890px;
+  }
+}
+
+@media (max-width: 910px) {
+  .footer-grid{
+    width:600px;
+  }
+}
+
+@media (max-width: 620px) {
+  .footer-grid{
+    width:413px;
+  }
+}
+
+@media (max-width: 433px) {
+  .footer-grid{
+    width:320px;
+  }
+}

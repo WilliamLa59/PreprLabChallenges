@@ -61,12 +61,15 @@ export const Navbar = () => {
 
   return (
     <div className='navbar-container' >
-
-        <img src={logo} alt="" />
-
-        <FontAwesomeIcon className="nav-bars" icon={faBars} onClick={() => setIsShowing(!isShowing)}/>
         
-        <div className="side-nav" style={isShowing ? {left: "0px"} : {left: "-50vw"}}>
+        <div className='logo-container'>
+            <img src={logo} alt="" />
+
+            <FontAwesomeIcon className="nav-bars" icon={faBars} onClick={() => setIsShowing(!isShowing)}/>
+        </div>
+       
+        
+        <div className="side-nav" style={isShowing ? {left: "0px"} : {left: "-75vw"}}>
             <img className='side-nav-profile'src={user_profile} alt="" />
             <a className='profile-link' href="">William La</a>
             <div className='side-nav-btns'>
@@ -125,28 +128,33 @@ export const Navbar = () => {
       
 
         <div className="nav-items">
-            <Button className="nav-btn" width='100px' variant='ghost' leftIcon={<img src={explore} alt=''/>}>
-                Explore
+            <Button className="nav-btn explore-btn" variant='ghost' leftIcon={<img src={explore} alt=''/>}>
+                <p className='nav-btn-text'>Explore</p>
             </Button>
 
             <Menu isOpen={dashboardIsOpen}>
-                <MenuButton className="nav-btn" onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose} as={Button} width='145x' variant='ghost' leftIcon={<img className='nav-icon' src={dashboard} alt=''/>}> My Dashboard</MenuButton>
+                <MenuButton className="nav-btn dashboard-btn" onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose} as={Button} variant='ghost' leftIcon={<img className='nav-icon' src={dashboard} alt=''/>}><p className='nav-btn-text'>My Dashboard</p></MenuButton>
                 <MenuList onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose}>
                     <MenuItem icon={<img className='nav-icon' src={user_dashboard} alt=''/>}>User Dashboard</MenuItem>
                 </MenuList>
             </Menu>
 
-            <Menu className="nav-btn" isOpen={manageIsOpen}>
-                <MenuButton className="nav-btn" onMouseEnter={manageOnOpen} onMouseLeave={manageOnClose} as={Button} width='110px' variant='ghost' leftIcon={<img className='nav-icon' src={settings} alt=''/>}>Manage</MenuButton>
+            <Menu isOpen={manageIsOpen}>
+                <MenuButton className="nav-btn manage-btn" onMouseEnter={manageOnOpen} onMouseLeave={manageOnClose} as={Button} variant='ghost' leftIcon={<img className='nav-icon' src={settings} alt=''/>}><p className='nav-btn-text'>Manage</p></MenuButton>
                 <MenuList onMouseEnter={manageOnOpen} onMouseLeave={manageOnClose}>
                     <MenuItem icon={<img className='nav-icon' src={user} alt=''/>}>Profile</MenuItem>
                 </MenuList>
             </Menu>
 
-            <InputGroup className='input-container' width="400px">
-                <InputLeftElement children={<SearchIcon/>} />
-                <Input type="text" placeholder="Search Challenges, Labs, Projects and People" size="md" width="375px"/>
-            </InputGroup>
+            <br />
+
+            <div className='input-container'>
+                <InputGroup width="400px">
+                    <InputLeftElement children={<SearchIcon/>} />
+                    <Input type="text" placeholder="Search Challenges, Labs, Projects and People" size="md" width="375px"/>
+                </InputGroup>
+            </div>
+            
 
             <Menu>
                 {({ isOpen }) => (
