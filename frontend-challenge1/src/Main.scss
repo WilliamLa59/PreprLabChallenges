@@ -1,3 +1,4 @@
+//colors codes for light mode
 html{
     --bg: #f3f7fc;
     --bg-panel: #fff;
@@ -11,6 +12,7 @@ html{
     --card-desc:#727d92;
 }
 
+//color codes for dark mode
 html[data-theme='dark']{
     --bg: #333333;
     --bg-panel: #434343;
