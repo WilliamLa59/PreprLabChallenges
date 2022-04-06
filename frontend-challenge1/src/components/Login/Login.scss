@@ -1,0 +1,44 @@
+.login-background-wrapper{
+    background: #AFDB88 url("../../assets/backgrounds/login-bg-img.png") no-repeat;
+    max-width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1rem;
+    width: 20%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: 8rem;
+    margin-top: 5rem;
+    .login-logo-container{
+        margin: 2rem auto;
+    }
+    .login-input-container{
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 2rem;
+    }
+    .forgot-text{
+        text-align: right;
+        cursor: pointer;
+    }
+    button{
+        margin-top: 1rem;
+        background-color: #ffa841;
+    }
+    button:hover{
+        background-color: #995200;
+    }
+    button:active{
+        background-color: #995200;
+    }
+    a{
+        color: #27ae60;
+    }
+}

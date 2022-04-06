@@ -1,0 +1,55 @@
+.register-background-wrapper{
+    background: #AED489 url("../../assets/backgrounds/registerBackground.jpg") no-repeat;
+    background-size: 20%;
+    background-position: 23% 3%;
+    max-width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.register-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height:100%;
+    overflow-y: hidden;
+}
+
+.register-carousel{
+    position: relative;
+    width: 70%;
+    left: 10rem;
+    top: 10rem;
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1rem;
+    width: 75%;
+    height: 70%;
+    margin-right: auto;
+    margin-top: 5rem;
+    .register-logo-container{
+        margin: 2rem auto;
+    }
+    .register-input-container{
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 2rem;
+    }
+    button{
+        margin-top: 1rem;
+        background-color: #ffa841;
+    }
+    button:hover{
+        background-color: #995200;
+    }
+    button:active{
+        background-color: #995200;
+    }
+    
+    a{
+        color: #27ae60;
+    }
+}

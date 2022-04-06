@@ -16,6 +16,7 @@ import {
     
 } from "@chakra-ui/react"
 import { SearchIcon } from '@chakra-ui/icons'
+import { Link, useLocation } from 'react-router-dom'
 
 import logo from '../../assets/logo.png'
 import explore from '../../assets/explore.png'
@@ -40,7 +41,6 @@ import { faBars,faUser, faQuestionCircle, faEnvelope, faNewspaper, faBell, faCog
 
 import './Navbar.scss'
 
-
 export const Navbar = () => {
     const[isShowing, setIsShowing] = useState(false);
     
@@ -50,6 +50,9 @@ export const Navbar = () => {
     const prevScrollY = useRef(0);
 
     const [darkMode, setDarkMode] = useState(false);
+
+    const location = useLocation();
+    const [currentRoute, setCurrentRoute] = useState(location.pathname)
 
     useEffect(() => {                                           //Scroll Event Listener taken from here: 
         const handleScroll = () => {                            //https://javascript.plainenglish.io/how-to-update-a-state-in-a-react-component-in-a-scroll-event-listener-b04ecc7e26e6
@@ -65,8 +68,7 @@ export const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isShowing]);
 
-    useEffect(()=> {
-        
+    useEffect(() => {
         if(darkMode){
             document.documentElement.setAttribute('data-theme', 'dark');
         }
@@ -76,8 +78,13 @@ export const Navbar = () => {
         // console.log("dark mode:" +darkMode);
     },[darkMode]);
 
+    useEffect(() =>{
+       setCurrentRoute(location.pathname);
+    //    console.log(currentRoute);
+    },[location.pathname])
+
   return (
-    <div className='navbar-container' >
+    <div className='navbar-container' style={currentRoute === '/' || currentRoute === '/register' ? {display: 'none'} : {display: 'flex'}}>
         
         <div className='logo-container'>
             <img src={logo} alt="" />
@@ -193,7 +200,7 @@ export const Navbar = () => {
                         <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faNewspaper} color="var(--general-font-color)"/>} >Newsfeed</MenuItem>
                         <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faBell} color="var(--general-font-color)"/>}>Notifications 0</MenuItem>
                         <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faCog} color="var(--general-font-color)"/>}>Settings</MenuItem>
-                        <MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faSignOut} color="var(--general-font-color)"/>}>Log Out</MenuItem>
+                        <Link to='/'><MenuItem style={darkMode? {color: "var(--nav-font-color)"} : {}} icon={<FontAwesomeIcon icon={faSignOut} color="var(--general-font-color)"/>}>Log Out</MenuItem></Link>
                     </MenuList>
                     </React.Fragment>
                 )}

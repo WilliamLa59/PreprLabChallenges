@@ -1,0 +1,40 @@
+.carousel-title{
+    color:white;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 1rem auto;
+}
+
+.carousel-desc{
+    color:white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.rec{
+    .rec-arrow:disabled {
+        visibility: hidden;
+    }
+    
+    .rec-arrow {
+        background-color: #ffffff7c;
+    }
+    .rec-arrow:hover:enabled,
+    .rec-arrow:focus:enabled {
+        background-color: #ffffff7c;
+    }
+    
+    .rec-dot {
+        background-color: #ffffff7c;
+        box-shadow: 0 0 1px 3px #ffffff7c;
+    }
+    .rec-dot:hover {
+        box-shadow: 0 0 1px 3px white;
+    }
+    .rec-dot:focus:enabled,
+    .rec-dot:active:enabled {
+        background-color: white;
+        box-shadow: 0 0 1px 3px white;
+    }
+    
+}
