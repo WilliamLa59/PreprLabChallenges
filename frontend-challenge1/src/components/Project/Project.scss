@@ -1,0 +1,23 @@
+.project{
+    width:100%;
+    h1{
+        text-align: left;
+        color: #27ae60;
+        font-size: 20px;
+    }
+    .project-content{
+        display: flex;
+        
+        img{
+            width: 8rem;
+        }
+        p{
+            margin: auto 0;
+        }
+        
+    }
+    hr{
+        color: black;
+        margin: 1rem 0;
+    }
+}

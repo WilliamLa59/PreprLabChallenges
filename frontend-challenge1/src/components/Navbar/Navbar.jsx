@@ -16,7 +16,7 @@ import {
     
 } from "@chakra-ui/react"
 import { SearchIcon } from '@chakra-ui/icons'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 import logo from '../../assets/logo.png'
 import explore from '../../assets/explore.png'
@@ -54,6 +54,8 @@ export const Navbar = () => {
     const location = useLocation();
     const [currentRoute, setCurrentRoute] = useState(location.pathname)
 
+    const navigate = useNavigate();
+
     useEffect(() => {                                           //Scroll Event Listener taken from here: 
         const handleScroll = () => {                            //https://javascript.plainenglish.io/how-to-update-a-state-in-a-react-component-in-a-scroll-event-listener-b04ecc7e26e6
             const currentScrollY = window.scrollY;
@@ -87,7 +89,7 @@ export const Navbar = () => {
     <div className='navbar-container' style={currentRoute === '/' || currentRoute === '/register' ? {display: 'none'} : {display: 'flex'}}>
         
         <div className='logo-container'>
-            <img src={logo} alt="" />
+            <img src={logo} alt="" onClick={() => {navigate("/challenges", {replace:true})}} style={{cursor: "pointer"}}/>
 
             <FontAwesomeIcon className="nav-bars" icon={faBars} onClick={() => setIsShowing(!isShowing)}/>
         </div>
@@ -165,7 +167,7 @@ export const Navbar = () => {
             <Menu isOpen={dashboardIsOpen}>
                 <MenuButton className="nav-btn dashboard-btn" onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose} as={Button} variant='ghost' colorScheme={darkMode ? 'whiteAlpha' : 'gray'} leftIcon={<img className='nav-icon' src={dashboard} alt=''/>}><p className='nav-btn-text'>My Dashboard</p></MenuButton>
                 <MenuList onMouseEnter={dashboardOnOpen} onMouseLeave={dashboardOnClose} bg={darkMode ? '#434343' : '#fff'}>
-                    <MenuItem icon={<img className='nav-icon' src={user_dashboard} alt=''/>} style={darkMode? {color: "var(--nav-font-color)"} : {}}>User Dashboard</MenuItem>
+                    <Link to="/user/home"><MenuItem icon={<img className='nav-icon' src={user_dashboard} alt=''/>} style={darkMode? {color: "var(--nav-font-color)"} : {}}>User Dashboard</MenuItem></Link>
                 </MenuList>
             </Menu>
 

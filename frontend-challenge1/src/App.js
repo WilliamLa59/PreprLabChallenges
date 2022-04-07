@@ -9,6 +9,8 @@ import { Projects } from './components/Projects/Projects';
 import { Footer } from './components/Footer/Footer';
 import { Register } from './components/Register/Register';
 import { Login } from './components/Login/Login';
+import { Dashboard } from './components/Dashboard/Dashboard';
+import { Createproject } from './components/Createproject/Createproject';
 
 function App() {
 
@@ -22,6 +24,7 @@ function App() {
             <Route path="/challenges" element={<Challenges/>}/> 
             <Route path="/labs" element={<Labs/>}/> 
             <Route path="/projects" element={<Projects/>}/> 
+            <Route path="/user/home" element={<Dashboard/>}/>
           </Routes>
         
       </BrowserRouter>
