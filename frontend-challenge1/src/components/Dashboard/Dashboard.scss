@@ -130,6 +130,9 @@ button:focus{
 @media (max-width: 580px) {
     .createproject-container{
         top: 99%;
+        .create-closeicon{
+            left: 35%;
+        }
     }
 }
 
