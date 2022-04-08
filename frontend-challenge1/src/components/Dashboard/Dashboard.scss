@@ -1,5 +1,5 @@
 .dashboard-background-wrapper{
-    min-height: 100vh;
+    min-height: 120vh;
 }
 
 .dashboard-container{
@@ -11,7 +11,18 @@
     row-gap: 30px;
     margin: 2rem;
     padding: 2rem;
-    
+}
+
+.createproject-container{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .create-closeicon{
+        position: relative;
+        top: 6rem;
+        left: 40%;
+    }
 }
 
 .dashboard{
@@ -99,5 +110,36 @@ button:focus{
     .dashboard-container{
         width: 100%;
         margin:0;
+    }
+}
+
+//Create menu
+@media (max-width: 920px) {
+    .createproject-container{
+        top: 75%;
+    }
+}
+
+@media (max-width: 819px) {
+    .createproject-container{
+        top: 80%;
+    }
+}
+
+
+@media (max-width: 580px) {
+    .createproject-container{
+        top: 99%;
+    }
+}
+
+@media (max-width: 540px) {
+    .createproject-container{
+        top: 102%;
+    }
+}
+@media (max-width: 416px) {
+    .createproject-container{
+        top: 105%;
     }
 }

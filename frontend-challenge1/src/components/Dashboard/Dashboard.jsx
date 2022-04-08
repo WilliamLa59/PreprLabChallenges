@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Project } from '../Project/Project';
 import { Createproject } from "../Createproject/Createproject";
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Button } from '@chakra-ui/react'
+import { CloseIcon } from '@chakra-ui/icons'
 
 import "./Dashboard.scss"
 
@@ -13,7 +14,8 @@ export const Dashboard = () => {
     function addProject(newProject) {
         setProjects(prevProject => {
             return [...prevProject, newProject];
-        });   
+        });
+        setIsOpen(!isOpen)   
     }
     
   return (
@@ -25,6 +27,7 @@ export const Dashboard = () => {
                     <Button height="25px" bg="#28a745" color="white" onClick={()=>{setIsOpen(!isOpen)}}>Create</Button>
                 </div>
                 <div className="createproject-container"style={isOpen ? {display: "inline"} : {display: "none"}}>
+                    <CloseIcon className="create-closeicon"onClick={()=>{setIsOpen(!isOpen)}}/>
                     <Createproject onCreate={addProject}/>
                 </div>
                 <Tabs isFitted>
