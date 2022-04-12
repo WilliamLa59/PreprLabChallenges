@@ -4,7 +4,7 @@ A project done in cooperation with Prepr Labs & its Flexible Upskilling Network(
 
 Live Demo: https://prepr-homepage-clone.herokuapp.com/
 
-# This project targeted the digital lab for web developers and solves all 4 of its Front End challenges:
+### This project targeted the digital lab for web developers and solves all 4 of its Front End challenges:
 
 ## Challenge 1:
 Recreate https://preprlabs.org/ page(after login)
