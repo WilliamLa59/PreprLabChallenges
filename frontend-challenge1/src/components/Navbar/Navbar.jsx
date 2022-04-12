@@ -38,24 +38,23 @@ import resources from '../../assets/resources.png'
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars,faUser, faQuestionCircle, faEnvelope, faNewspaper, faBell, faCog, faSignOut, faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
+import { faBars,faUser, faQuestionCircle, faEnvelope, faNewspaper, faBell, faCog, faSignOut, faPeopleGroup, faWheelchair } from '@fortawesome/free-solid-svg-icons'
 
 import './Navbar.scss'
 import { transform } from 'framer-motion'
 
 export const Navbar = () => {
-    const[isShowing, setIsShowing] = useState(false);
-    
+    const [isShowing, setIsShowing] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
+    const [isShowingAccess, setIsShowingAcess] = useState(false);
+
+
     const { isOpen: dashboardIsOpen, onOpen: dashboardOnOpen, onClose: dashboardOnClose } = useDisclosure()
     const { isOpen: manageIsOpen, onOpen: manageOnOpen, onClose: manageOnClose } = useDisclosure()
     
     const prevScrollY = useRef(0);
-
-    const [darkMode, setDarkMode] = useState(false);
-
     const location = useLocation();
     const [currentRoute, setCurrentRoute] = useState(location.pathname)
-
     const navigate = useNavigate();
 
     function handleClick (event) {
@@ -168,11 +167,13 @@ export const Navbar = () => {
                 </ul>
             </div>
         </div>   
+        
+        <Button className="access-btn" onClick={() => setIsShowingAcess(!isShowingAccess)}><FontAwesomeIcon size='lg' icon={faWheelchair}/></Button>
 
-        <div className="accessibility-nav">
+        <div className="accessibility-nav" style={isShowingAccess ? { transform: 'scale(1)'} : { transform: 'scale(0.8)', opacity: '0', height: '0', overflow:"hidden"}}>
             <div className='accessibility-taskbar'>
                 <div className='task-btns'>
-                    <Button size="sm" ><CloseIcon/></Button>
+                    <Button size="sm" onClick={() => setIsShowingAcess(!isShowingAccess)}><CloseIcon/></Button>
                     <Button size="sm"><ArrowUpDownIcon style={{transform:"rotate(90deg)"}}/></Button>
                 </div>
                 
@@ -312,7 +313,7 @@ export const Navbar = () => {
             <br />
 
             <div className='input-container'>
-                <InputGroup width="400px">
+                <InputGroup>
                     <InputLeftElement children={<SearchIcon/>} />
                     <Input type="text" placeholder="Search Challenges, Labs, Projects and People" size="md" width="375px"/>
                 </InputGroup>
