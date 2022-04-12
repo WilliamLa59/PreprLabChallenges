@@ -7,7 +7,7 @@ Rather than have 1 separate project for each challenge I decided to keep buildin
 Live Demo: https://prepr-homepage-clone.herokuapp.com/
 
 Demo account credentials: Username-williamla or Email-williamla@example.com, Password-password123  
-Or you can skil the login screen by adding the /challenges extention to the url
+Or you can skip the login screen by adding the /challenges extention to the url
 
 ## Challenge 1:
 Recreate https://preprlabs.org/ page(after login)
