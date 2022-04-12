@@ -4,7 +4,7 @@ A project done in cooperation with Prepr Labs & its Flexible Upskilling Network(
 This project targeted the digital lab for web developers and solves all 4 of its Front End challenges
 
 Live Demo: https://prepr-homepage-clone.herokuapp.com/  
-Demo account credentials: Username-williamla or Email-williamla@example.com, Password-password123
+Demo account credentials: Username- williamla or Email- williamla@example.com, Password- password123
 
 ## Challenge 1:
 Recreate https://preprlabs.org/ page(after login)
