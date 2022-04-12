@@ -143,6 +143,110 @@ width: 110px;
   }
 }
 
+.accessibility-nav{
+  background-color: var(--bg);
+  border-radius: 1rem;
+  position: absolute;
+  top: 6%;
+  width: 550px;
+  height: auto;
+  z-index: 5;
+  .accessibility-taskbar{
+    background-color: #109326;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius:  1rem 1rem 0 0;
+    .task-btns{
+      margin: auto 0;
+    }
+    .language-selector{
+      select{
+        outline: none;
+        border: none;
+        border-radius: 4rem;
+      }
+    }
+  }
+
+  .accessibility-panel-title{
+    color: black;
+    font-size: 18px;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  
+  .accessibility-header{
+    padding: 30px;
+    background-color: rgb(104, 187, 71) ;
+    h1{
+      color: white;
+      font-size: 23px;
+      padding-bottom: 30px;
+    }
+  }
+
+  .accessibility-search{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background-color: var(--bg-panel);
+  }
+
+  .accessibility-toggles{
+    background-color: var(--bg-panel);
+    border-radius: 0 0 2rem 2rem;
+    width: 95%;
+    margin: 0 auto;
+    .switch-option{
+      display: flex;
+      margin: 1rem auto;
+      margin-left: 2rem;
+      label{
+        margin: auto 0;
+      }
+    }
+    .switch-option-text{
+      text-align: left;
+      margin-left: 2.5rem;
+    }
+    .accessibility-panel-title{
+      padding-bottom: 0;
+      padding-top: 20px;
+      margin-left: 2rem;
+    }
+  }
+
+  .accessibility-panel{
+    background-color: var(--bg-panel);
+    border-radius: 1rem;
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .accessibility-btn:hover{
+    border: 2px solid green;
+  }
+  .accessibility-btn-grid6{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .accessibility-btn-grid4{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  
+  .accessibility-orientation{
+    margin-bottom: 1rem;
+  }
+  
+}
+
 @media (max-width: 1042px) {
   .nav-btn{
     width: 50px;

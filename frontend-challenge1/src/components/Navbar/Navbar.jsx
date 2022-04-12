@@ -8,14 +8,15 @@ import {
     Button,
     InputGroup,
     InputLeftElement,
+    InputRightElement,
     Input,
     Switch,
     FormLabel,
-    FormControl,
-    color,
+    Select,
+    Radio,
     
 } from "@chakra-ui/react"
-import { SearchIcon } from '@chakra-ui/icons'
+import { SearchIcon, CloseIcon, ArrowUpDownIcon} from '@chakra-ui/icons'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 import logo from '../../assets/logo.png'
@@ -40,6 +41,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars,faUser, faQuestionCircle, faEnvelope, faNewspaper, faBell, faCog, faSignOut, faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
 
 import './Navbar.scss'
+import { transform } from 'framer-motion'
 
 export const Navbar = () => {
     const[isShowing, setIsShowing] = useState(false);
@@ -55,6 +57,15 @@ export const Navbar = () => {
     const [currentRoute, setCurrentRoute] = useState(location.pathname)
 
     const navigate = useNavigate();
+
+    function handleClick (event) {
+        if (event.target.style.backgroundColor === "green"){
+            event.target.style.backgroundColor = "#edf2f7";
+        }else{
+            event.target.style.backgroundColor = "green";
+        }
+        
+    }
 
     useEffect(() => {                                           //Scroll Event Listener taken from here: 
         const handleScroll = () => {                            //https://javascript.plainenglish.io/how-to-update-a-state-in-a-react-component-in-a-scroll-event-listener-b04ecc7e26e6
@@ -157,7 +168,127 @@ export const Navbar = () => {
                 </ul>
             </div>
         </div>   
-      
+
+        <div className="accessibility-nav">
+            <div className='accessibility-taskbar'>
+                <div className='task-btns'>
+                    <Button size="sm" ><CloseIcon/></Button>
+                    <Button size="sm"><ArrowUpDownIcon style={{transform:"rotate(90deg)"}}/></Button>
+                </div>
+                
+                <div className='language-selector' isfullwidth='false'>
+                    <Select placeholder="English">
+                        <option value="2">Spanish</option>
+                        <option value="3">Chinese</option>
+                        <option value="4">Hindi</option>
+                        <option value="5">Arabic</option>
+                        <option value="6">Portuguese</option>
+                        <option value="7">Bengali</option>
+                        <option value="8">Russian </option>
+                        <option value="9">Japanese </option>
+                        <option value="10">Lahnda</option>
+
+                    </Select>
+                </div>
+            </div>
+
+            <div className='accessibility-header'>
+                <h1>Accessibility Adjustments</h1>
+                <div className='header-btns'>
+                    <Button onClick={() => {window.location.reload(false)}}>Reset Settings</Button>
+                    <Button>Statement</Button>
+                    <Button>Hide Interface</Button>
+                </div>
+            </div>
+
+            <div className='accessibility-body'>
+                <div className='accessibility-search'>
+                    <InputGroup>
+                        <Input type="text" placeholder="Searchthe online dictionary..." size="md"/>
+                        <InputRightElement children={<SearchIcon/>} />
+                    </InputGroup>
+                </div>
+                <div className='accessibility-toggles'>
+                    <h1 className='accessibility-panel-title'>Choose the right accessibility profile for you</h1>
+                    <div className='switch-option'>
+                        <Switch size='lg' colorScheme='green'></Switch>
+                        <div className='switch-option-text'>
+                            <h2>Seizure Safe Profile</h2>
+                            <p>Eliminates flashes and reduces color</p>
+                        </div>
+                    </div>
+                    <div className='switch-option'>
+                        <Switch size='lg' colorScheme='green'></Switch>
+                        <div className='switch-option-text'>
+                        <h2>Vision Impared Profile</h2>
+                        <p>Enhances the wbesite's visuals</p>
+                        </div>
+                    </div>
+                    <div className='switch-option'>
+                        <Switch size='lg' colorScheme='green'></Switch>
+                        <div className='switch-option-text'>
+                        <h2>Cognitive Disability Profile</h2>
+                        <p>Assists with reading and focusing</p>
+                        </div>
+                    </div>
+                    <div className='switch-option'>
+                        <Switch size='lg' colorScheme='green'></Switch>
+                        <div className='switch-option-text'>
+                        <h2>ADHD Friendly Profile</h2>
+                        <p>More focus and fewer distractions</p>
+                        </div>
+                    </div>
+                    <div className='switch-option'>
+                        <Switch size='lg' colorScheme='green'></Switch>
+                        <div className='switch-option-text'>
+                        <h2>Blind Users (Screen-reader)</h2>
+                        <p>Use the website with your screen-reader</p>
+                        </div>
+                    </div>
+                    <div className='switch-option'>
+                        <Switch size='lg' colorScheme='green'></Switch>
+                        <div className='switch-option-text'>
+                        <h2>Keyboard Navigation (Motor)</h2>
+                        <p>Use the website with the keyboard</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div className='accessibility-content accessibility-panel'>
+                    <h1 className='accessibility-panel-title'>Content Adjustments</h1>
+                    <div className='accessibility-btn-grid6'>
+                        <Button className="accessibility-btn" onClick={handleClick}>Readable Font</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Highlight Titles</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Highlight Links</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Text Magnifier</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Align Center</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Align Left</Button>
+                    </div>
+                </div>
+
+                <div className='accessibility-colors accessibility-panel'>
+                    <h1 className='accessibility-panel-title'>Color Adjustments</h1>
+                    <div className='accessibility-btn-grid6'>
+                        <Button className="accessibility-btn" onClick={handleClick}>Dark Contrast</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Light Contrast</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>High Contrast</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Low Saturation</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>High Saturation</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Monochrome</Button>
+                    </div>
+                </div>
+                <div className='accessibility-orientation accessibility-panel'>
+                    <h1 className='accessibility-panel-title'>Orientation Adjustment</h1>
+                    <div className='accessibility-btn-grid4'>
+                        <Button className="accessibility-btn" onClick={handleClick}>Mute Sounds</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Hide Images</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Stop Animations</Button>
+                        <Button className="accessibility-btn" onClick={handleClick}>Highlight Focus</Button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div className="nav-items">
             <Button className="nav-btn explore-btn" variant='ghost' colorScheme={darkMode ? 'whiteAlpha' : 'gray'} leftIcon={<img src={explore} alt=''/>}>
