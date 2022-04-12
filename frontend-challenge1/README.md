@@ -9,22 +9,22 @@ Live Demo: https://prepr-homepage-clone.herokuapp.com/
 Demo account credentials: Username-williamla or Email-williamla@example.com, Password-password123  
 Or you can skil the login screen by adding the /challenges extention to the url
 
-### Challenge 1:
+## Challenge 1:
 Recreate https://preprlabs.org/ page(after login)
 
 [Direct Link to Solution](https://prepr-homepage-clone.herokuapp.com/challenges)  
 
-### Challenge 2: 
+## Challenge 2: 
 Recreate https://preprlabs.org/register and https://preprlabs.org/login page. Please ensure the sign-up and register form works
 
 [Direct Link to Solution](https://prepr-homepage-clone.herokuapp.com/)  
 
-### Challenge 3:
+## Challenge 3:
 Recreate https://preprlabs.org/user/home and https://preprlabs.org/createProject/0 page. Please ensure you can actually create a project and display it on your dashboard
 
 [Direct Link to Solution](https://prepr-homepage-clone.herokuapp.com/user/home)  
 
-### Challenge 4:
+## Challenge 4:
 Recreate accessibility floating window.
 
 [Direct Link to Solution](https://prepr-homepage-clone.herokuapp.com/challenges)  
