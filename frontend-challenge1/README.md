@@ -10,10 +10,10 @@ This project targets the digital lab for web developers and solves all 4 of its 
 Rather than have 1 separate project for each challenge I decided to keep building upon the same project with each challenge.
 
 ## Stack
--[React](https://reactjs.org/)
--[Chakra UI](https://chakra-ui.com/)
--[SCSS](https://sass-lang.com/documentation/syntax)
--[React-Router](https://reactrouter.com/)  
+- [React](https://reactjs.org/)
+- [Chakra UI](https://chakra-ui.com/)
+- [SCSS](https://sass-lang.com/documentation/syntax)
+- [React-Router](https://reactrouter.com/)  
 
 ## Challenge 1:
 Recreate https://preprlabs.org/ page(after login)
