@@ -1,72 +1,31 @@
-# Getting Started with Create React App
+# PreprLabs Frontend Challenge
+
+A project done in cooperation with Prepr Labs & its Flexible Upskilling Network(F.U.N) program.  
+This project targeted the digital lab for web developers and solves all 4 of its Front End challenges.  
+Rather than have 1 separate project for each challenge I decided to keep building upon the same project with each challenge.
 
 Live Demo: https://prepr-homepage-clone.herokuapp.com/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Demo account credentials: Username-williamla or Email-williamla@example.com, Password-password123  
+Or you can skip the login screen by adding the /challenges extention to the url
 
-## Available Scripts
+## Challenge 1:
+Recreate https://preprlabs.org/ page(after login)
 
-In the project directory, you can run:
+[Direct Link to Solution](https://prepr-homepage-clone.herokuapp.com/challenges)  
 
-### `npm start`
+## Challenge 2: 
+Recreate https://preprlabs.org/register and https://preprlabs.org/login page. Please ensure the sign-up and register form works
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Direct Link to Solution](https://prepr-homepage-clone.herokuapp.com/)  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Challenge 3:
+Recreate https://preprlabs.org/user/home and https://preprlabs.org/createProject/0 page. Please ensure you can actually create a project and display it on your dashboard
 
-### `npm test`
+[Direct Link to Solution](https://prepr-homepage-clone.herokuapp.com/user/home)  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Challenge 4:
+Recreate accessibility floating window.
 
-### `npm run build`
+[Direct Link to Solution](https://prepr-homepage-clone.herokuapp.com/challenges)  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
